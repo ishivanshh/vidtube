@@ -65,4 +65,5 @@ const userSchema = new Schema(
 )
 // timstamps => createdAT and updatedAT
 
+// userSchema.pre("save" , async function (next))
 export const User = mongoose.model("User" , userSchema)

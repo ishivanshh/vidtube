@@ -11,7 +11,9 @@
 //   updatedAt Date
 
 
-import mongoose ,  {Schema, trusted} from "mongoose";
+import mongoose ,  {plugin, Schema, trusted} from "mongoose";
+
+import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
 const videoSchema = new Schema  (
     {
@@ -53,3 +55,7 @@ const videoSchema = new Schema  (
 );
 
 export const Video = mongoose.model("Video", videoSchema);
+
+videoSchema.plugin(mongooseAggregatePaginate);
+
+export default Video;
